@@ -40,7 +40,7 @@ foreach( OUTPUTCONFIG ${CMAKE_CONFIGURATION_TYPES} )
 endforeach( OUTPUTCONFIG CMAKE_CONFIGURATION_TYPES )
 
 # Add target JADE
-add_executable(${PROJECT_NAME} WIN32 "src/main.cpp")
+add_executable(${PROJECT_NAME} WIN32 "src/main.cpp" "resources.qrc")
 
 # In MSVC, Startup project must be JADE
 set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT ${PROJECT_NAME})
