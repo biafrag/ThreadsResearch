@@ -8,6 +8,8 @@ class Calculo : public QObject
 public:
     Calculo();
     ~Calculo();
-    float doCalculus();
+    void doCalculus();
 
+signals:
+    void finished(float result);
 };

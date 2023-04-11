@@ -2,6 +2,7 @@
 #include <limits.h>
 #include "math.h"
 #include "stdio.h"
+#include <QApplication>
 Calculo::Calculo()
 {
 }
@@ -14,17 +15,24 @@ Calculo::~Calculo()
 
 
 
-float Calculo::doCalculus()
+void Calculo::doCalculus()
 {
+//    if(this->thread() == QApplication::instance()->thread())
+//    {
+//        printf("Eh a main thread\n");
+//    }
+//    else
+//    {
+//        printf("Nao eh a main thread\n");
+//    }
+
     float count = 0;
-    for(int i = 0; i < INT_MAX; i++)
+
+    for(int j = 0; j < INT_MAX; j++)
     {
-        for(int j = 0; j < INT_MAX; j++)
-        {
-            count += sqrt(23 * i);
-        }
+        count += sqrt(23 * j);
     }
-   // printf("%f\n", count);
-    return count;
+
+    emit finished(count);
 }
 

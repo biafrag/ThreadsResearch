@@ -1,6 +1,6 @@
 #include "include/canvas.h"
 #include <QMouseEvent>
-
+#include <QApplication>
 const char* vertexShaderSource = R"(
     #version 330 core
     layout( location = 0 ) in vec3 vertexPos;
