@@ -10,7 +10,7 @@ class Calculo;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
-    QThread *calculoThread;
+    std::thread _thread;
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
@@ -19,5 +19,6 @@ private:
     Ui::MainWindow *ui;
     Calculo *_calculo;
     int _count = 0;
+
 };
 #endif // MAINWINDOW_H
